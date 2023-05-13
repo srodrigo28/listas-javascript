@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnMouse</title>
+    <style>
+        .contPers{
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #fff;
+            font-weight: 700;
+            background-color: violet;
+            border-radius: 10px;
+            transition: 1s;
+        }
+        .contPers:hover{
+            background-color: green;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Eventos</h2>
+    <ul>
+        <li>mouseOut</li>
+        <li>mouseAlt</li>
+    </ul>
+    <hr>
+    <p id="conteudo"></p>
+    <hr>
+    <div 
+        onmouseover="mouseOut()"
+        onmouseout="mouseAlt()"
+        class="contPers" 
+        id="mouseAlt">
+        Passe o mouse
+    </div>
+
+    <script>
+        function mouseOut(){
+            document.getElementById('conteudo').innerHTML = `Notícas processadores ficam mais, carros,
+                a cada dia, por conta dos impostos `;
+        }
+        function mouseAlt(){
+            document.getElementById('conteudo').innerHTML = ``;
+        }
+    </script>
+</body>
+</html>
