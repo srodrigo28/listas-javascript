@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <title>Lista 01</title>
+</head>
+<body>
+
+    <h2>Lista</h2>
+    <input type="text" placeholder="Lembrete" id="input" >
+    <button id="add">Adicionar</button>
+    
+    <ul id="lista">
+
+    </ul>
+
+    <script>
+        const button = document.getElementById('add')
+        const input = document.getElementById('input')
+        const listaBody = document.getElementById('lista')
+
+        let lista = []
+        function AdicionaTarefa() {
+            lista.push(input.value)
+            MostrarTarefas()
+        }
+        function MostrarTarefas() {
+            let novaLi = ''
+            //nada
+            lista.forEach((tarefa) => {
+                    novaLi = novaLi + `
+                    <li> ${tarefa} </li>
+                `
+            })
+            listaBody.innerHTML = novaLi
+        }
+        button.addEventListener("click", AdicionaTarefa)
+    </script>
+</body>
+</html>
